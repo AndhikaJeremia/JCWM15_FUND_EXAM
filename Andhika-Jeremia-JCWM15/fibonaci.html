@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonaci</title>
+</head>
+<body>
+    <h1>deret fibonaci</h1>
+    <input type="number" placeholder="masukan angka" id="i1">
+    <button onclick="Show()">Show</button>
+    <button onclick="Ganjil()">Ganjil</button>
+    <button onclick="Genap()">Genap</button>
+    <p id="px"></p>
+    <p id="py"></p>
+</body>
+<script>
+    function Show() {
+        let inputnumber = document.getElementById('i1')
+        let number = parseInt(inputnumber.value)
+        let p = document.getElementById('px')
+        p.textContent = '' 
+        let n1 = 0
+        let n2 = 1
+        let lanjutan
+        for (let a = 0; a<number; a++){
+            console.log(n1)
+            lanjutan = n1 + n2
+            if (lanjutan > 1000) {
+                break
+            }else {
+                n1 = n2
+                n2 = lanjutan
+                p.textContent += `${n1}, `
+            }
+        }
+        
+    }
+    function Ganjil() {
+        let inputnumber = document.getElementById('i1')
+        let number = parseInt(inputnumber.value)
+        let p = document.getElementById('px')
+         let py = document.getElementById('py')
+        py.textContent = '' 
+        p.textContent = '' 
+        let n1 = 0
+        let n2 = 1
+        let lanjutan
+        let nx = []
+        for (let a = 0; a<number; a++){
+            console.log(n1)
+            lanjutan = n1 + n2
+            if (lanjutan > 1000) {
+                break
+            }else {
+                n1 = n2
+                n2 = lanjutan
+                if (n1 % 2 !== 0) {
+                    nx.push(n1)
+                    let total = 0
+                    for (let x = 0 ; x< nx.length; x++){
+                        total += parseInt(nx[x])
+                    }
+                    p.textContent += `${n1} `
+                    py.textContent = `hasil penjumlahan fibonanci = ${total}`
+
+                }
+            }
+        }
+        
+    }
+    function Genap() {
+        let inputnumber = document.getElementById('i1')
+        let number = parseInt(inputnumber.value)
+        let p = document.getElementById('px') 
+        let py = document.getElementById('py')
+        py.textContent = ''
+        p.textContent = '' 
+        let n1 = 0
+        let n2 = 1
+        let lanjutan
+        let nx = []
+        for (let a = 0; a<number; a++){
+            console.log(n1)
+            lanjutan = n1 + n2
+            if (lanjutan > 1000) {
+                break
+            }else {
+                n1 = n2
+                n2 = lanjutan
+                if (n1 % 2 === 0) {
+                    nx.push(n1)
+                    let total = 0
+                    for (let x = 0 ; x< nx.length; x++){
+                        total += parseInt(nx[x])
+                    }
+                    p.textContent += `${n1} `
+                    py.textContent = `hasil penjumlahan fibonanci = ${total}`
+                }
+            }
+        }
+        
+    }
+</script>
+</html>

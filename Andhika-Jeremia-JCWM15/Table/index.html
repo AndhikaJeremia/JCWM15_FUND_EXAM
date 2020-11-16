@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Form</title>
+</head>
+<style>
+    table, tr, th, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+</style>
+<body>
+    <h1>Form Users</h1>
+    <form id="Formx1">
+        <input type="text" name="username" placeholder="Username" id="i1" >
+        <input type="email" name="email" placeholder="Email" id="i2">
+        <select id="s1">
+            <option>admin</option>
+            <option>user</option>
+        </select>
+        <button onclick="RegisterForm(event)">Add Users</button>
+    </form>
+    <table id="UserData">
+        <thead>
+            <th>No</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </thead>
+        <tbody></tbody>
+        </table>
+</body>
+<script src="/Andhika-Jeremia-JCWM15/Table/DataBase.js"></script>
+<script src="/Andhika-Jeremia-JCWM15/Table/Data.js"></script>
+</html>
